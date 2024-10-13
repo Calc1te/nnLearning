@@ -71,7 +71,7 @@ def main():
     net = Net().to(device)
     
     print("initial accuracy:", evaluate(test_data, net))
-    optimizer = torch.optim.Adam(net.parameters(), lr=0.001)
+    optimizer = torch.optim.Adam(net.parameters(), lr=1e-5)
     for epoch in range(4):
         for (x, y) in train_data:
             x,y = x.to(device), y.to(device)
